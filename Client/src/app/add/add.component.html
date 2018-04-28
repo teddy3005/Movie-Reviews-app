@@ -1,0 +1,30 @@
+
+<!-- <a [routerLink]="['']">Home</a> -->
+<h3>Register a restaurant</h3><br>
+
+
+
+<!-- <p> {{ newMovie | json }} </p> -->
+<p style="color:red;font-weight:bold" *ngIf="(error)">{{error}}</p>
+<form (submit)= "onButtonClickCreate()">
+Movie Title: <input type="text" name="newMovie.title" [(ngModel)]= "newMovie.title"/><br>
+Your name: <input type="text" name="newMovie.reviews.name"[(ngModel)]= "newMovies.reviews.name"/><br>
+stars::<select name="newMovie.reviews.star" [(ngModel)]= "newMovies.reviews.star">
+    <option selected="selected" value="1">1 star</option>
+    <option value = "2">2 star</option>
+    <option value = "3">3 star</option>
+    <option value = "4">4 star</option>
+    <option value = "5">5 star</option>   
+</select><br>
+Your Review<input type="text" name="newMovie.reviews.review" [(ngModel)]="newMovies.reviews.review" /><br>
+
+<input type="submit" value="Submit"/>
+<button [routerLink]="['']">Cancel</button>
+</form>
+
+
+<!-- <button [routerLink]="['']">Cancel</button> -->
+
+
+
+

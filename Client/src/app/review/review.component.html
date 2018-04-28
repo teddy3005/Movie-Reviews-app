@@ -1,0 +1,22 @@
+<!-- <p> {{ newReview | json }} </p> -->
+{{ newReview | json }}
+<form (submit)="onSubmit()">
+  <p style="color:red;font-weight:bold" *ngIf="(error)">{{error}}</p>
+  
+  Your Name:<input type="text" name="newReview.name" [(ngModel)]="newReview.name" /><br>
+  stars::<select name="newReview.star" [(ngModel)]= "newReview.star">
+    <option value="0">--</option>
+    <option value="1">1 star</option>
+    <option value = "2">2 star</option>
+    <option value = "3">3 star</option>
+    <option value = "4">4 star</option>
+    <option value = "5">5 star</option>
+    
+</select><br>
+
+  Your Review<input type="text" name="newReview.review" [(ngModel)]="newReview.review" /><br>
+  
+  <p *ngIf="(error)">{{error}}</p>
+  <input type="submit" value="Submit" />
+</form>
+<button [routerLink]="['']">Cancel</button>

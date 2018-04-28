@@ -1,0 +1,15 @@
+<a [routerLink]="['']">Home</a>
+<h3>Edit restaurant</h3>
+<p style="color:red;font-weight:bold" *ngIf = "(error)"> {{error}}</p>
+
+<form (submit) = "changePet()"  *ngIf = "(editRestaurant)" >
+    Name: <input type="text" name="editRestaurant.name" [(ngModel)]= "editRestaurant.name"/><br>
+    Type: <input type="text" name="editRestaurant.type"[(ngModel)]= "editRestaurant.type"/><br>
+   
+    <hr>
+    
+    <input type="submit" value="Edit Pet!"/><button [routerLink]="['']">Cancel</button>
+    
+   
+</form>
+

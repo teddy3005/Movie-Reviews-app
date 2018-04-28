@@ -1,0 +1,51 @@
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+<body>
+  
+  <h2>Movie List</h2>
+  <a [routerLink]="['add']"> New Movie</a>
+  <table>
+    <thead>
+      <tr>
+        <th>Movie Title</th>
+        <th>Actions Available</th>
+      </tr>
+        <tr *ngFor = "let x of movies">
+        <td>{{x.title}}</td>
+        <!-- <td>{{x.type}}</td> -->
+        <td><button [routerLink]="['view/',x._id]">Read Reviews</button>
+          <button [routerLink]="['review/',x._id]">Write Review</button>
+          <button (click) = "deleteIt(x)">Delete Review!</button>
+          <!-- <button [routerLink]="['edit',x._id]">Edit</button>
+          <button (click) = "deleteIt(x)">Delete</button></td> -->
+      </tr>
+    </thead>
+  </table>
+
+
+    <!-- <h3>We have quotes by:</h3> -->
+    <!-- <p *ngFor = "let x of authors">{{x.name}}<button [routerLink]="['view']">Details</button>
+      <button (click) = "onButtonClickUpdate(x._id,x.title,x.description)">Edit</button></p> -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+  
+
+<!--   
+  <button (click) = "onButtonClickDelete(x)">Delete</button>
+  <button (click) = "onButtonClickUpdate(x._id,x.name)">Edit</button> </p></p> -->

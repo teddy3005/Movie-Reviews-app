@@ -1,0 +1,22 @@
+<a [routerLink]="['']">Home</a>
+<button [routerLink]="['/review/' +restaurant._id]">New Review</button>
+<!-- <h4>Reviews for {{ x.name}}</h4> -->
+<p>Reviews for {{restaurant.title}}</p>
+<table>
+    <thead>
+      <tr>
+        <th>Reviewer</th>
+        <th>Stars</th>
+        <th>Reviews</th>
+      </tr>
+        <tr *ngFor = "let x of restaurant.reviews">
+        <td>{{x.name}}</td>
+        <td>{{x.star}}</td>
+        <td>{{x.review}}</td>
+        <!-- <button (click) = "deleteReview(x)">Delete Review!</button> -->
+      </tr>
+    </thead>
+  </table>
+
+
+
